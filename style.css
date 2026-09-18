@@ -25,10 +25,15 @@ body {
     overflow-x: hidden;
 }
 
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 72px;
 
@@ -38,40 +43,67 @@ nav {
 
     padding: 0 5%;
 
-    background: rgba(0,0,0,.9);
+    background: rgba(0, 0, 0, .9);
     border-bottom: 1px solid #333;
 
     z-index: 1000;
 
     backdrop-filter: blur(8px);
+
+    min-width: 0;
 }
 
-.nav-logo {
+.nav-logo,
+.logo {
     font-family: 'Permanent Marker', cursive;
-    font-size: 30px;
+
+    font-size: clamp(22px, 3vw, 32px);
+
     color: white;
-    transform: rotate(-3deg);
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    line-height: 1;
 }
 
 .nav-links {
     display: flex;
+
     gap: 25px;
+
     list-style: none;
+
+    min-width: 0;
 }
 
 .nav-links a {
     color: white;
+
     text-decoration: none;
+
     text-transform: uppercase;
+
     font-weight: 900;
+
     letter-spacing: 2px;
+
     font-size: 13px;
+
     transition: .2s;
+
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
     color: var(--red);
 }
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
     min-height: 100vh;
@@ -95,22 +127,28 @@ nav {
 
 .hero-content {
     width: 100%;
+
     position: relative;
+
     z-index: 2;
 }
 
 .hero-small {
     text-transform: uppercase;
+
     letter-spacing: 5px;
+
     font-weight: 900;
+
     font-size: 14px;
+
     margin-bottom: 15px;
 }
 
 .hero-title {
     font-family: 'Permanent Marker', cursive;
 
-    font-size: clamp(90px,18vw,260px);
+    font-size: clamp(90px, 18vw, 260px);
 
     line-height: .75;
 
@@ -121,12 +159,15 @@ nav {
         12px 12px 0 rgba(0,0,0,.8);
 
     transform: rotate(-3deg);
+
     transform-origin: left;
 }
 
 .hero-bottom {
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-end;
 
     margin-top: 45px;
@@ -136,7 +177,9 @@ nav {
     max-width: 500px;
 
     font-size: 21px;
+
     line-height: 1.4;
+
     font-weight: 700;
 }
 
@@ -146,12 +189,15 @@ nav {
     padding: 15px 25px;
 
     background: var(--red);
+
     color: white;
 
     text-decoration: none;
+
     text-transform: uppercase;
 
     font-weight: 900;
+
     letter-spacing: 2px;
 
     border: 2px solid var(--red);
@@ -161,9 +207,16 @@ nav {
 
 .hero-button:hover {
     background: white;
+
     color: black;
+
     border-color: white;
 }
+
+
+/* =========================
+   SECTIONS
+========================= */
 
 section {
     padding: 110px 7%;
@@ -173,9 +226,11 @@ section {
     color: var(--red);
 
     font-size: 13px;
+
     font-weight: 900;
 
     letter-spacing: 5px;
+
     text-transform: uppercase;
 
     margin-bottom: 10px;
@@ -184,7 +239,7 @@ section {
 .section-title {
     font-family: 'Permanent Marker', cursive;
 
-    font-size: clamp(55px,8vw,110px);
+    font-size: clamp(55px, 8vw, 110px);
 
     line-height: .9;
 
@@ -198,6 +253,7 @@ section {
 
 .news {
     background: var(--white);
+
     color: black;
 }
 
@@ -225,16 +281,17 @@ section {
 
 .news-image {
     position: absolute;
+
     inset: 0;
 
     background:
-        linear-gradient(to top,rgba(0,0,0,.9),transparent 65%),
+        linear-gradient(to top, rgba(0,0,0,.9), transparent 65%),
         url("images/news.jpg") center/cover;
 }
 
 .news-card.small .news-image {
     background-image:
-        linear-gradient(to top,rgba(0,0,0,.9),transparent 65%),
+        linear-gradient(to top, rgba(0,0,0,.9), transparent 65%),
         url("images/news-small.jpg");
 }
 
@@ -242,7 +299,9 @@ section {
     position: absolute;
 
     bottom: 25px;
+
     left: 25px;
+
     right: 25px;
 
     color: white;
@@ -279,6 +338,7 @@ section {
     display: flex;
 
     justify-content: space-between;
+
     align-items: flex-end;
 
     margin-bottom: 45px;
@@ -331,6 +391,8 @@ section {
 }
 
 .live-button {
+    display: inline-block;
+
     color: white;
 
     border: 2px solid white;
@@ -338,6 +400,7 @@ section {
     padding: 10px 18px;
 
     text-decoration: none;
+
     text-transform: uppercase;
 
     font-weight: 900;
@@ -345,6 +408,7 @@ section {
 
 .live-button:hover {
     background: white;
+
     color: black;
 }
 
@@ -352,6 +416,7 @@ section {
     margin-top: 35px;
 
     display: flex;
+
     justify-content: flex-end;
 }
 
@@ -362,6 +427,7 @@ section {
 
 .music {
     background: var(--red);
+
     color: white;
 }
 
@@ -442,13 +508,14 @@ section {
 
 .band {
     background: var(--white);
+
     color: black;
 }
 
 .band-grid {
     display: grid;
 
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 12px;
 }
@@ -463,15 +530,17 @@ section {
     overflow: hidden;
 
     display: flex;
+
     align-items: flex-end;
 }
 
 .member-photo {
     position: absolute;
+
     inset: 0;
 
     background:
-        linear-gradient(to top,rgba(0,0,0,.95),transparent 65%),
+        linear-gradient(to top, rgba(0,0,0,.95), transparent 65%),
         url("images/member.jpg") center/cover;
 
     filter: grayscale(100%);
@@ -481,19 +550,19 @@ section {
 
 .band-member:nth-child(2) .member-photo {
     background-image:
-        linear-gradient(to top,rgba(0,0,0,.95),transparent 65%),
+        linear-gradient(to top, rgba(0,0,0,.95), transparent 65%),
         url("images/member2.jpg");
 }
 
 .band-member:nth-child(3) .member-photo {
     background-image:
-        linear-gradient(to top,rgba(0,0,0,.95),transparent 65%),
+        linear-gradient(to top, rgba(0,0,0,.95), transparent 65%),
         url("images/member3.jpg");
 }
 
 .band-member:nth-child(4) .member-photo {
     background-image:
-        linear-gradient(to top,rgba(0,0,0,.95),transparent 65%),
+        linear-gradient(to top, rgba(0,0,0,.95), transparent 65%),
         url("images/member4.jpg");
 }
 
@@ -528,9 +597,9 @@ section {
 }
 
 
-/* =========================================================
-   HOME PAGE — PHOTO COLLAGE
-========================================================= */
+/* =========================
+   PHOTOS
+========================= */
 
 .photos {
     background: #090909;
@@ -554,6 +623,7 @@ section {
 
 .home-photo img {
     width: 100%;
+
     height: 100%;
 
     display: block;
@@ -579,9 +649,6 @@ section {
     grid-row: 1 / 3;
 }
 
-
-/* HOME — VIEW ALL PHOTOS */
-
 .photos-more {
     display: flex;
 
@@ -602,6 +669,7 @@ section {
     text-decoration: none;
 
     font-size: 12px;
+
     font-weight: 900;
 
     letter-spacing: 2px;
@@ -624,13 +692,14 @@ section {
 
 .merch {
     background: var(--white);
+
     color: black;
 }
 
 .merch-grid {
     display: grid;
 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
 }
@@ -653,6 +722,7 @@ section {
     height: 400px;
 
     background-size: cover;
+
     background-position: center;
 
     position: relative;
@@ -662,11 +732,13 @@ section {
     content: "SUPERNOVA";
 
     position: absolute;
+
     inset: 0;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-family: 'Permanent Marker', cursive;
@@ -684,19 +756,19 @@ section {
 
 .merch-shirt {
     background:
-        linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.5)),
+        linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5)),
         #222;
 }
 
 .merch-hoodie {
     background:
-        linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.5)),
+        linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5)),
         #181818;
 }
 
 .merch-poster {
     background:
-        linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.5)),
+        linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5)),
         #292929;
 }
 
@@ -738,21 +810,22 @@ section {
 .video-grid {
     display: grid;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 20px;
 }
 
 .video {
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
 
     background:
-        linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.8)),
         url("images/video.jpg") center/cover;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     position: relative;
@@ -760,12 +833,13 @@ section {
 
 .video:nth-child(2) {
     background-image:
-        linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),
+        linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.8)),
         url("images/video2.jpg");
 }
 
 .video-play {
     width: 70px;
+
     height: 70px;
 
     border-radius: 50%;
@@ -773,6 +847,7 @@ section {
     background: var(--red);
 
     display: grid;
+
     place-items: center;
 
     font-size: 24px;
@@ -793,18 +868,20 @@ section {
     min-height: 70vh;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 
     background:
-        linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.9)),
         url("images/contact.jpg") center/cover;
 }
 
 .contact-title {
     font-family: 'Permanent Marker', cursive;
 
-    font-size: clamp(70px,13vw,180px);
+    font-size: clamp(70px, 13vw, 180px);
 
     line-height: .8;
 
@@ -876,7 +953,7 @@ footer strong {
 
 
 /* =========================================================
-   LIVE PAGE — SUPERNOVA
+   LIVE PAGE
 ========================================================= */
 
 .live-hero {
@@ -885,6 +962,7 @@ footer strong {
     min-height: 75vh;
 
     display: flex;
+
     align-items: flex-end;
 
     padding: 90px 8%;
@@ -945,7 +1023,7 @@ footer strong {
 
     font-size: clamp(80px, 13vw, 180px);
 
-    line-height: 0.78;
+    line-height: .78;
 
     letter-spacing: -7px;
 
@@ -953,7 +1031,7 @@ footer strong {
 }
 
 .live-hero h1 span {
-    color: #d71920;
+    color: var(--red);
 }
 
 .live-hero p {
@@ -972,15 +1050,16 @@ footer strong {
     position: absolute;
 
     right: 7%;
+
     top: 25%;
 
     z-index: 3;
 
-    border: 2px solid #d71920;
+    border: 2px solid var(--red);
 
     padding: 18px;
 
-    color: #d71920;
+    color: var(--red);
 
     font-size: 11px;
 
@@ -1013,7 +1092,7 @@ footer strong {
 }
 
 .live-heading span {
-    color: #d71920;
+    color: var(--red);
 
     font-size: 13px;
 
@@ -1027,7 +1106,7 @@ footer strong {
 
     font-size: clamp(45px, 7vw, 90px);
 
-    line-height: 0.9;
+    line-height: .9;
 }
 
 
@@ -1046,7 +1125,7 @@ footer strong {
 
     border-top: 1px solid #333;
 
-    transition: 0.25s ease;
+    transition: .25s ease;
 }
 
 .gig:last-child {
@@ -1056,7 +1135,7 @@ footer strong {
 .gig:hover {
     padding-left: 15px;
 
-    border-color: #d71920;
+    border-color: var(--red);
 }
 
 
@@ -1067,7 +1146,7 @@ footer strong {
 
     flex-direction: column;
 
-    line-height: 0.8;
+    line-height: .8;
 }
 
 .gig-day {
@@ -1081,7 +1160,7 @@ footer strong {
 .gig-month {
     margin-top: 14px;
 
-    color: #d71920;
+    color: var(--red);
 
     font-size: 14px;
 
@@ -1094,7 +1173,7 @@ footer strong {
 /* INFO */
 
 .gig-label {
-    color: #d71920;
+    color: var(--red);
 
     font-size: 10px;
 
@@ -1163,10 +1242,12 @@ footer strong {
     padding: 130px 8%;
 
     background: #111;
+
+    min-width: 0;
 }
 
 .booking-number {
-    color: #d71920;
+    color: var(--red);
 
     font-size: 14px;
 
@@ -1180,13 +1261,17 @@ footer strong {
 
     font-size: clamp(55px, 9vw, 120px);
 
-    line-height: 0.82;
+    line-height: .82;
 
     letter-spacing: -4px;
+
+    max-width: 100%;
+
+    overflow-wrap: break-word;
 }
 
 .live-booking h2 span {
-    color: #d71920;
+    color: var(--red);
 }
 
 .live-booking p {
@@ -1195,34 +1280,6 @@ footer strong {
     color: #999;
 
     line-height: 1.6;
-}
-
-.live-button {
-    display: inline-block;
-
-    margin-top: 25px;
-
-    padding: 16px 25px;
-
-    border: 1px solid white;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    transition: 0.2s;
-}
-
-.live-button:hover {
-    background: white;
-
-    color: black;
 }
 
 
@@ -1247,13 +1304,13 @@ footer strong {
 
     border-bottom: 1px solid #333;
 
-    transition: 0.2s ease;
+    transition: .2s ease;
 }
 
 .live-preview-show:hover {
     padding-left: 12px;
 
-    border-color: #d71920;
+    border-color: var(--red);
 }
 
 .live-preview-date {
@@ -1261,7 +1318,7 @@ footer strong {
 
     flex-direction: column;
 
-    line-height: 0.8;
+    line-height: .8;
 }
 
 .live-preview-date strong {
@@ -1273,7 +1330,7 @@ footer strong {
 .live-preview-date span {
     margin-top: 8px;
 
-    color: #d71920;
+    color: var(--red);
 
     font-size: 11px;
 
@@ -1319,24 +1376,25 @@ footer strong {
 
     padding-bottom: 8px;
 
-    transition: 0.2s ease;
+    transition: .2s ease;
 }
 
 .live-more a:hover {
-    color: #d71920;
+    color: var(--red);
 
-    border-color: #d71920;
+    border-color: var(--red);
 }
 
 
 /* =========================================================
-   PHOTOS.HTML — ALBUM
+   PHOTOS PAGE
 ========================================================= */
 
 .photos-hero {
     min-height: 65vh;
 
     display: flex;
+
     align-items: flex-end;
 
     padding: 80px 8%;
@@ -1376,9 +1434,6 @@ footer strong {
     font-size: 16px;
 }
 
-
-/* ALBUM */
-
 .photo-album {
     padding: 120px 8%;
 
@@ -1407,9 +1462,6 @@ footer strong {
     line-height: .9;
 }
 
-
-/* 4 PHOTOS PER ROW */
-
 .album-grid {
     display: grid;
 
@@ -1422,9 +1474,6 @@ footer strong {
     margin: 0 auto;
 }
 
-
-/* ALBUM IMAGE */
-
 .album-photo {
     width: 100%;
 
@@ -1433,10 +1482,13 @@ footer strong {
     overflow: hidden;
 
     background: #111;
+
+    cursor: pointer;
 }
 
 .album-photo img {
     width: 100%;
+
     height: 100%;
 
     display: block;
@@ -1457,18 +1509,194 @@ footer strong {
 }
 
 
-/* =========================
+/* =========================================================
+   PHOTO LIGHTBOX
+========================================================= */
+
+.photo-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .82);
+
+    padding: 70px 100px;
+}
+
+.photo-lightbox.active {
+    display: flex;
+}
+
+.lightbox-image-container {
+    max-width: 85vw;
+
+    max-height: 85vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.lightbox-image-container img {
+    display: block;
+
+    max-width: 85vw;
+
+    max-height: 85vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, .6);
+}
+
+.lightbox-close {
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 42px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    opacity: .75;
+
+    transition: .2s ease;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+
+    transform: scale(1.1);
+}
+
+.lightbox-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 60px;
+
+    height: 80px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 42px;
+
+    cursor: pointer;
+
+    opacity: .65;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+.lightbox-arrow:hover {
+    opacity: 1;
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-prev:hover {
+    transform: translateY(-50%) translateX(-4px);
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+.lightbox-next:hover {
+    transform: translateY(-50%) translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    nav {
+        padding: 0 3%;
+    }
+
+    .nav-logo,
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+
+        letter-spacing: 1px;
+    }
+
+    .live-booking h2 {
+        font-size: clamp(45px, 8vw, 90px);
+    }
+
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 800px) {
 
     nav {
         height: 62px;
+
+        padding: 0 5%;
     }
 
     .nav-links {
         display: none;
+    }
+
+    .nav-logo,
+    .logo {
+        font-size: 24px;
     }
 
     .hero {
@@ -1498,8 +1726,6 @@ footer strong {
     .band-grid {
         grid-template-columns: 1fr 1fr;
     }
-
-    /* HOME PHOTO COLLAGE */
 
     .home-photo-collage {
         grid-template-columns: 1fr 1fr;
@@ -1589,6 +1815,14 @@ footer strong {
         padding: 90px 6%;
     }
 
+    .live-booking h2 {
+        font-size: 52px;
+
+        line-height: .9;
+
+        letter-spacing: -2px;
+    }
+
 
     /* LIVE PREVIEW */
 
@@ -1620,211 +1854,6 @@ footer strong {
     .album-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-
-@media (max-width: 500px) {
-
-    .band-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-title {
-        font-size: 25vw;
-    }
-
-    /* HOME COLLAGE */
-
-    .home-photo-collage {
-        grid-template-columns: 1fr 1fr;
-
-        grid-template-rows:
-            250px
-            150px
-            150px;
-    }
-
-    /* PHOTO ALBUM */
-
-    .album-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-/* =========================
-   PHOTO ALBUM
-========================= */
-
-.album-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.album-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
-    background: #111;
-    cursor: pointer;
-}
-
-.album-photo img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    filter: grayscale(75%);
-    transition:
-        transform .35s ease,
-        filter .35s ease;
-}
-
-.album-photo:hover img {
-    transform: scale(1.04);
-    filter: grayscale(0%);
-}
-
-
-/* =========================
-   PHOTO LIGHTBOX
-========================= */
-
-.photo-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(0, 0, 0, 0.82);
-
-    padding: 70px 100px;
-}
-
-.photo-lightbox.active {
-    display: flex;
-}
-
-
-/* BIG IMAGE */
-
-.lightbox-image-container {
-    max-width: 85vw;
-    max-height: 85vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-image-container img {
-    display: block;
-
-    max-width: 85vw;
-    max-height: 85vh;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
-}
-
-
-/* CLOSE BUTTON */
-
-.lightbox-close {
-    position: absolute;
-
-    top: 25px;
-    right: 30px;
-
-    width: 45px;
-    height: 45px;
-
-    border: none;
-    background: transparent;
-
-    color: white;
-
-    font-size: 42px;
-    line-height: 40px;
-
-    cursor: pointer;
-
-    opacity: .75;
-
-    transition: .2s ease;
-}
-
-.lightbox-close:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-
-/* LEFT / RIGHT ARROWS */
-
-.lightbox-arrow {
-    position: absolute;
-
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 60px;
-    height: 80px;
-
-    border: none;
-    background: transparent;
-
-    color: white;
-
-    font-size: 42px;
-
-    cursor: pointer;
-
-    opacity: .65;
-
-    transition:
-        opacity .2s ease,
-        transform .2s ease;
-}
-
-.lightbox-arrow:hover {
-    opacity: 1;
-}
-
-.lightbox-prev {
-    left: 25px;
-}
-
-.lightbox-prev:hover {
-    transform: translateY(-50%) translateX(-4px);
-}
-
-.lightbox-next {
-    right: 25px;
-}
-
-.lightbox-next:hover {
-    transform: translateY(-50%) translateX(4px);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    .album-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .photo-lightbox {
         padding: 60px 55px;
@@ -1833,11 +1862,13 @@ footer strong {
     .lightbox-image-container,
     .lightbox-image-container img {
         max-width: 90vw;
+
         max-height: 80vh;
     }
 
     .lightbox-arrow {
         width: 45px;
+
         font-size: 32px;
     }
 
@@ -1848,11 +1879,36 @@ footer strong {
     .lightbox-next {
         right: 5px;
     }
-
 }
 
 
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
 @media (max-width: 500px) {
+
+    .nav-logo,
+    .logo {
+        font-size: 22px;
+    }
+
+    .band-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 25vw;
+    }
+
+    .home-photo-collage {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows:
+            250px
+            150px
+            150px;
+    }
 
     .album-grid {
         grid-template-columns: 1fr;
@@ -1864,7 +1920,34 @@ footer strong {
 
     .lightbox-close {
         top: 15px;
+
         right: 15px;
+    }
+
+    .live-booking h2 {
+        font-size: 42px;
+
+        line-height: .95;
+
+        letter-spacing: -1px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .nav-logo,
+    .logo {
+        font-size: 20px;
+    }
+
+    .live-booking h2 {
+        font-size: 36px;
     }
 
 }

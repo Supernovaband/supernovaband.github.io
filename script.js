@@ -1,17 +1,78 @@
 /* =========================
-   MUSIC
+   MUSIC PLAYER
 ========================= */
 
-function selectSong(song) {
+let currentAudio = null;
+let currentSong = null;
 
+
+function playSong(song, file) {
+
+    /* If clicking the same song, pause it */
+    if (currentSong === song && currentAudio) {
+
+        if (currentAudio.paused) {
+            currentAudio.play();
+            song.querySelector(".song-play").textContent = "❚❚";
+        } else {
+            currentAudio.pause();
+            song.querySelector(".song-play").textContent = "▶";
+        }
+
+        return;
+    }
+
+
+    /* Stop previous song */
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+
+
+    /* Reset all songs */
     document.querySelectorAll(".song").forEach(item => {
+
         item.style.background = "";
+
+        const button = item.querySelector(".song-play");
+
+        if (button) {
+            button.textContent = "▶";
+        }
+
     });
 
+
+    /* Create new audio */
+    currentAudio = new Audio(file);
+
+    currentSong = song;
+
+
+    /* Highlight current song */
     song.style.background = "#252525";
+
+    song.querySelector(".song-play").textContent = "❚❚";
+
+
+    /* Play */
+    currentAudio.play();
+
+
+    /* Reset when song ends */
+    currentAudio.addEventListener("ended", function () {
+
+        song.style.background = "";
+
+        song.querySelector(".song-play").textContent = "▶";
+
+        currentAudio = null;
+        currentSong = null;
+
+    });
+
 }
-
-
 /* =========================
    PHOTO LIGHTBOX
 ========================= */

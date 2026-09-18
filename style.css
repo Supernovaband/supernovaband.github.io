@@ -286,13 +286,19 @@ section {
 
     background:
         linear-gradient(to top, rgba(0,0,0,.9), transparent 65%),
-        url("images/news.jpg") center/cover;
+        url("images/news/ukm.jpg") center center / cover no-repeat;
 }
 
-.news-card.small .news-image {
+.music-news .news-image {
     background-image:
         linear-gradient(to top, rgba(0,0,0,.9), transparent 65%),
-        url("images/news-small.jpg");
+        url("images/news/music.jpg");
+}
+
+.band-news .news-image {
+    background-image:
+        linear-gradient(to top, rgba(0,0,0,.9), transparent 65%),
+        url("images/news/band.jpg");
 }
 
 .news-text {
@@ -1958,4 +1964,23 @@ footer strong {
         line-height: 0.9;
         white-space: nowrap;
     }
+}
+
+.email-button {
+    display: inline-block;
+    padding: 16px 28px;
+    border: 1px solid #444;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    transition: .2s ease;
+}
+
+.email-button:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    transform: translateX(4px);
 }

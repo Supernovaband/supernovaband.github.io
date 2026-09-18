@@ -148,7 +148,7 @@ nav {
 .hero-title {
     font-family: 'Permanent Marker', cursive;
 
-    font-size: clamp(90px, 18vw, 260px);
+    font-size: clamp(60px, 12vw, 180px);
 
     line-height: .75;
 

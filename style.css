@@ -1951,3 +1951,11 @@ footer strong {
     }
 
 }
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 70px;
+        line-height: 0.9;
+        white-space: nowrap;
+    }
+}

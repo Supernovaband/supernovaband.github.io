@@ -1966,21 +1966,602 @@ footer strong {
     }
 }
 
-.email-button {
+.band-more {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.band-more a {
     display: inline-block;
-    padding: 16px 28px;
+    padding: 14px 22px;
     border: 1px solid #444;
-    color: white;
+    color: #222;
     text-decoration: none;
     font-size: 12px;
     font-weight: 900;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     transition: .2s ease;
 }
 
-.email-button:hover {
+.band-more a:hover {
     background: white;
     color: black;
     border-color: white;
-    transform: translateX(4px);
+}
+
+/* =========================================================
+   MEMBER GALLERY
+========================================================= */
+
+.member-photo {
+    cursor: pointer;
+}
+
+.band-member {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MEMBER LIGHTBOX
+========================================================= */
+
+.member-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .88);
+
+    padding: 60px 100px;
+}
+
+.member-lightbox.active {
+    display: flex;
+}
+
+
+.member-lightbox-content {
+    max-width: 85vw;
+
+    max-height: 90vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.member-lightbox-content img {
+    display: block;
+
+    max-width: 80vw;
+
+    max-height: 72vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, .7);
+}
+
+
+/* INFO */
+
+.member-lightbox-info {
+    text-align: center;
+
+    margin-top: 18px;
+}
+
+
+.member-lightbox-info h2 {
+    font-family: 'Permanent Marker', cursive;
+
+    font-size: 34px;
+
+    color: white;
+
+    line-height: 1;
+}
+
+
+.member-lightbox-info p {
+    margin-top: 6px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.member-lightbox-info span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #666;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+/* CLOSE */
+
+.member-lightbox-close {
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 42px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    opacity: .75;
+
+    transition: .2s ease;
+}
+
+.member-lightbox-close:hover {
+    opacity: 1;
+
+    transform: scale(1.1);
+}
+
+
+/* ARROWS */
+
+.member-lightbox-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 60px;
+
+    height: 80px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 42px;
+
+    cursor: pointer;
+
+    opacity: .65;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+.member-lightbox-arrow:hover {
+    opacity: 1;
+}
+
+
+.member-lightbox-prev {
+    left: 25px;
+}
+
+
+.member-lightbox-prev:hover {
+    transform:
+        translateY(-50%)
+        translateX(-4px);
+}
+
+
+.member-lightbox-next {
+    right: 25px;
+}
+
+
+.member-lightbox-next:hover {
+    transform:
+        translateY(-50%)
+        translateX(4px);
+}
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-hero {
+    min-height: 75vh;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:80px 6vw;
+
+    background:
+        linear-gradient(to top, rgba(0,0,0,.95), rgba(0,0,0,.2)),
+        url("images/member.jpg") center/cover no-repeat;
+}
+
+.about-hero-content {
+    max-width:1200px;
+}
+
+.about-hero h1 {
+    margin-top:15px;
+
+    font-family:'Roboto Condensed', Arial, sans-serif;
+
+    font-size:clamp(70px, 12vw, 190px);
+    line-height:.8;
+
+    font-weight:900;
+    letter-spacing:-6px;
+}
+
+.about-hero h1 span {
+    color:var(--red);
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.about-story {
+    background:var(--white);
+    color:#111;
+
+    padding:120px 6vw;
+}
+
+.about-story-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:80px;
+
+    max-width:1400px;
+    margin:40px auto 0;
+}
+
+.about-story-title h2 {
+    font-size:clamp(50px, 6vw, 100px);
+    line-height:.85;
+
+    font-weight:900;
+    letter-spacing:-3px;
+}
+
+.about-story-text {
+    max-width:650px;
+}
+
+.about-story-text p {
+    font-size:20px;
+    line-height:1.55;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   LINEUP
+========================= */
+
+.about-lineup {
+    background:#111;
+    color:white;
+
+    padding:110px 6vw;
+}
+
+.about-members {
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:10px;
+
+    max-width:1600px;
+    margin:45px auto 0;
+}
+
+.about-member {
+    position:relative;
+
+    min-height:520px;
+
+    background:#222;
+
+    overflow:hidden;
+}
+
+.about-member-photo {
+    position:absolute;
+    inset:0;
+}
+
+.about-member-photo::after {
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            transparent 65%
+        );
+}
+
+.about-member-photo img {
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    filter:grayscale(100%);
+
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+}
+
+.about-member:hover img {
+    transform:scale(1.05);
+    filter:grayscale(0%);
+}
+
+.about-member-info {
+    position:absolute;
+
+    left:25px;
+    right:25px;
+    bottom:25px;
+
+    z-index:2;
+}
+
+.about-member-info span {
+    display:block;
+
+    color:#777;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    margin-bottom:8px;
+}
+
+.about-member-info h3 {
+    font-family:'Permanent Marker', cursive;
+
+    font-size:42px;
+
+    line-height:1;
+}
+
+.about-member-info p {
+    margin-top:7px;
+
+    color:#bbb;
+
+    font-size:12px;
+    font-weight:900;
+
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+.about-community {
+    min-height:500px;
+
+    display:flex;
+    align-items:center;
+
+    padding:100px 6vw;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.7),
+            rgba(0,0,0,.9)
+        ),
+        url("images/contact.jpg") center/cover no-repeat;
+}
+
+.about-community-content {
+    max-width:800px;
+}
+
+.about-community h2 {
+    margin:15px 0 25px;
+
+    font-size:clamp(50px, 8vw, 120px);
+
+    line-height:.85;
+
+    font-weight:900;
+    letter-spacing:-4px;
+}
+
+.about-community p {
+    max-width:650px;
+
+    color:#bbb;
+
+    font-size:19px;
+    line-height:1.5;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.about-contact {
+    background:var(--red);
+
+    color:white;
+
+    padding:110px 6vw;
+}
+
+.about-contact h2 {
+    margin:15px 0 35px;
+
+    font-size:clamp(55px, 9vw, 140px);
+
+    line-height:.82;
+
+    font-weight:900;
+    letter-spacing:-5px;
+}
+
+.about-contact a {
+    display:inline-block;
+
+    padding:16px 25px;
+
+    border:2px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    transition:.2s ease;
+}
+
+.about-contact a:hover {
+    background:white;
+    color:black;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:900px) {
+
+    .about-story-grid {
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .about-members {
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-member {
+        min-height:450px;
+    }
+
+}
+
+@media (max-width:600px) {
+
+    .about-hero {
+        min-height:65vh;
+        padding:60px 25px;
+    }
+
+    .about-hero h1 {
+        letter-spacing:-3px;
+    }
+
+    .about-story {
+        padding:80px 25px;
+    }
+
+    .about-story-text p {
+        font-size:17px;
+    }
+
+    .about-lineup {
+        padding:80px 25px;
+    }
+
+    .about-members {
+        grid-template-columns:1fr;
+    }
+
+    .about-member {
+        min-height:500px;
+    }
+
+    .about-community {
+        padding:80px 25px;
+    }
+
+    .about-contact {
+        padding:80px 25px;
+    }
+
+}
+
+/* Keep the SUPERNOVA navigation logo white */
+.nav-logo a,
+.nav-logo a:visited,
+.nav-logo a:hover,
+.nav-logo a:active {
+    color: white;
+    text-decoration: none;
 }
